@@ -1,0 +1,62 @@
+﻿@model ProjectCV.Models.Class.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<h2>About</h2>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>MAIL</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Value1)
+        {
+            <tr>
+                <td>@x.id</td>
+                <td>@x.name</td>
+                <td>@x.surname</td>
+                <td>@x.address</td>
+                <td>@x.phone</td>
+                <td>@x.mail</td>
+                <td><a href="/About/BringDatas/@x.id" class="btn btn-primary">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<h2>Personel Charecterictics</h2>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>SKILL</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Value7)
+        {
+            <tr>
+                <th>@x.id</th>
+                <td>@x.trait</td>
+                <td><a href="/About/DeleteTrait/@x.id" class="btn btn-danger">Delete</a></td>
+                <td><a href="/About/TraitDatas/@x.id" class="btn btn-primary">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/About/NewTrait" class="btn btn-info" >Add New Trait</a>
+
+

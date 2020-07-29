@@ -1,0 +1,20 @@
+﻿@model ProjectCV.Models.Entity.TblSkill
+@{
+    ViewBag.Title = "BringSkill";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateSkill", "Skills", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.skill)
+        @Html.TextBoxFor(m => m.skill, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Update</button>
+    </div>
+}
+
+

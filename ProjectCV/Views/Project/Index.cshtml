@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>PROJECTS</th>
+            <th>TYPES</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Value6)
+        {
+            <tr>
+                <th>@x.id</th>
+                <td>@x.project</td>
+                <td>@x.type</td>
+                <td>@Html.ActionLink("Delete", "DeleteProject", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure that?')" })</td>
+                <td><a href="/Project/BringProject/@x.id" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Project/NewProject/" class="btn btn-info">Add New Project</a>

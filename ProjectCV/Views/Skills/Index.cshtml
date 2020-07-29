@@ -1,0 +1,36 @@
+﻿@using ProjectCV.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblSkill>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>SKILL</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <th>@x.id</th>
+                <td>@x.skill</td>
+                <td><a href="/Skills/DeleteSkill/@x.id" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Skills/BringSkill/@x.id" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+<a href="/Skills/NewSkill" class="btn btn-info">Add New Skill</a>
+

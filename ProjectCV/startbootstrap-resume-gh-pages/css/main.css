@@ -1,0 +1,35 @@
+﻿        .footerr {
+            display: block;
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            font-size: 11px;
+            /*background-color: #bd5d38!important;*/
+            text-align: center;
+        }
+        .footer-mobile {
+            display: none;
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            font-size: 11px;
+            /*background-color: #bd5d38!important;*/
+            text-align: center;
+        }
+
+        @media screen and (max-width: 992px) {
+        .footerr {
+        display: none !important;
+        visibility: hidden;
+        color: grey;
+        }
+        .footer-mobile{
+            display:inline;
+            color: #bd5d38;
+        }
+           
+}

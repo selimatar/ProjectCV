@@ -1,0 +1,35 @@
+﻿@model ProjectCV.Models.Entity.TblAbout
+@{
+    ViewBag.Title = "BringDatas";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "About", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class="form-control"})
+    <br/>
+        @Html.LabelFor(m => m.name)
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+    <br />
+        @Html.LabelFor(m => m.surname)
+        @Html.TextBoxFor(m => m.surname, new { @class = "form-control" })
+    <br />
+        @Html.LabelFor(m => m.address)
+        @Html.TextBoxFor(m => m.address, new { @class = "form-control" })
+    <br />
+        @Html.LabelFor(m => m.phone)
+        @Html.TextBoxFor(m => m.phone, new { @class = "form-control" })
+    <br />
+        @Html.LabelFor(m => m.mail)
+        @Html.TextBoxFor(m => m.mail, new { @class = "form-control" })
+    <br />
+        @Html.LabelFor(m => m.about)
+        @Html.TextAreaFor(m => m.about, new { @class = "form-control" })
+    <br />
+        <button class="btn btn-primary">Update</button>
+    </div>
+
+}
+

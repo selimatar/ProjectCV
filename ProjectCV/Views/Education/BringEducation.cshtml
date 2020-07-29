@@ -1,0 +1,32 @@
+﻿@model ProjectCV.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "BringEducation";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Education", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.title)
+        @Html.TextBoxFor(m => m.title, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.subtitle)
+        @Html.TextBoxFor(m => m.subtitle, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.department)
+        @Html.TextBoxFor(m => m.department, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.date)
+        @Html.TextBoxFor(m => m.date, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.gpa)
+        @Html.TextBoxFor(m => m.gpa, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Update</button>
+    </div>
+}
+
+

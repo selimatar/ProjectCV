@@ -1,0 +1,40 @@
+﻿@model ProjectCV.Models.Class.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>SUBTITLE</th>
+            <th>COMPANY</th>
+            <th>DATE</th>
+            <th>DETAILS</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model.Value2)
+        {
+            <tr>    
+                <th>@x.id</th>
+                <td>@x.title</td>
+                <td>@x.subtitle</td>
+                <td>@x.company</td>
+                <td>@x.date</td>
+                <td>@x.details</td>
+                <td>@Html.ActionLink("Delete", "DeleteExperience", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure that?')" })</td>
+                <td><a href="/Experience/BringExperience/@x.id" class="btn btn-primary">Update</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<a href="/Experience/NewExperience" class="btn btn-info">Add New Experience</a>
+

@@ -1,0 +1,22 @@
+﻿@model ProjectCV.Models.Entity.TblProject
+@{
+    ViewBag.Title = "BringProject";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProject", "Project", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.project)
+        @Html.TextBoxFor(m => m.project, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.type)
+        @Html.TextBoxFor(m => m.type, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Update</button>
+    </div>
+}
+

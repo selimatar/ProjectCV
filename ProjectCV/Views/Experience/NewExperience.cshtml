@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "NewExperience";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Title of Experience</label>
+        <input type="text" class="form-control" name="title"/>
+    </div>
+    <br />
+    <div>
+        <label>Subtitle of Experience</label>
+        <input type="text"class="form-control" name="subtitle"/>
+    </div>
+    <br />
+    <div>
+        <label>Date</label>
+        <input type="text" class="form-control" name="date"/>
+    </div>
+    <br />
+    <div>
+        <label>Details</label>
+        <textarea class="form-control" rows="6" name="details"></textarea>
+    </div>
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>
+

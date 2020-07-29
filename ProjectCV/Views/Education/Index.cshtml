@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>SUBTITLE</th>
+            <th>DEPARTMENT</th>
+            <th>DATE</th>
+            <th>GPA</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Value3)
+        {
+            <tr>
+                <th>@x.id</th>
+                <td>@x.title</td>
+                <td>@x.subtitle</td>
+                <td>@x.department</td>
+                <td>@x.date</td>
+                <td>@x.gpa</td>
+                <td><a href="/Education/DeleteEducation/@x.id" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Education/BringEducation/@x.id" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Education/NewEducation/" class="btn btn-info">Add New Education</a>

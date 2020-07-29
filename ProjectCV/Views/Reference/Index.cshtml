@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>DEPARTMENT</th>
+            <th>COMPANY</th>
+            <th>POSITION</th>
+            <th>PHONE</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Value5)
+        {
+            <tr>
+                <th>@x.id</th>
+                <td>@x.name</td>
+                <td>@x.surname</td>
+                <td>@x.department</td>
+                <td>@x.company</td>
+                <td>@x.position</td>
+                <td>@x.phone</td>
+                <td>@Html.ActionLink("Delete", "DeleteReference", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure that?')" })</td>
+                <td><a href="/Reference/BringReference/@x.id" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Reference/NewReference" class="btn btn-info">Add New Reference</a>
+
